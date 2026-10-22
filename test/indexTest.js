@@ -55,25 +55,3 @@ describe('Handling form submission', () => {
     expect(taskList.textContent).to.include('Wash the dishes')
   })
 })
-
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("create-task-form");
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-   const task = document.getElementById("new-task-description").value;
-
-    buildToDo(task);
-
-    form.reset();
-  });
-
-  function buildToDo(task) {
-    const li = document.createElement("li");
-    li.textContent = task;
-
-    const taskList = document.getElementById("tasks");
-    taskList.appendChild(li);
-  }
-});
